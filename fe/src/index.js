@@ -7,7 +7,6 @@ import { Player, ControlBar } from 'video-react';
 import Audio from 'soundcloud-audio';
 import classNames from 'classnames';
 
-require("./css/index.css");
 require("../../node_modules/video-react/dist/video-react.css");
 
 /*const data = [
@@ -134,7 +133,15 @@ class App extends React.Component {
 		}) || [];
 
 		return (
-			<div className="recoder-container">
+			<div className="recoder-container"
+				style={{
+					"width": "1200px",
+					"margin": "150px auto 0",
+					"padding": "20px",
+					"border": "1px solid #e0d7d7",
+					"borderRadius": "10px"
+				}}
+			>
 				<DatePicker 
 					defaultValue={moment()}
 					onChange={(date, dateStr) => {

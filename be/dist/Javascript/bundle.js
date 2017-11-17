@@ -30366,7 +30366,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 __webpack_require__(561);
-__webpack_require__(563);
 
 /*const data = [
 	{
@@ -30446,7 +30445,11 @@ var App = function (_React$Component) {
 							_react2.default.createElement('img', { width: '100px', src: content[1].picPath })
 						);
 					case "表情":
-						return _react2.default.createElement('img', { width: '100px', src: content[1].emotionPath });
+						return _react2.default.createElement(
+							'a',
+							{ download: true, href: content[1].emotionPath },
+							_react2.default.createElement('img', { width: '100px', src: content[1].emotionPath })
+						);
 					case "语音":
 						return _react2.default.createElement('audio', {
 							src: content[1].autioPath,
@@ -30503,7 +30506,15 @@ var App = function (_React$Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: 'recoder-container' },
+				{ className: 'recoder-container',
+					style: {
+						"width": "1200px",
+						"margin": "150px auto 0",
+						"padding": "20px",
+						"border": "1px solid #e0d7d7",
+						"borderRadius": "10px"
+					}
+				},
 				_react2.default.createElement(_datePicker2.default, {
 					defaultValue: (0, _moment2.default)(),
 					onChange: function onChange(date, dateStr) {
@@ -78685,51 +78696,6 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 562 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".recoder-container {\r\n\twidth: 1200px;\r\n\tmargin: 150px auto 0;\r\n\tpadding: 20px;\r\n\tborder: 1px solid #e0d7d7;\r\n\tborder-radius: 10px;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 563 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(564);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(13)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
 		module.hot.accept("!!../../css-loader/index.js!./video-react.css", function() {
 			var newContent = require("!!../../css-loader/index.js!./video-react.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
@@ -78741,7 +78707,7 @@ if(false) {
 }
 
 /***/ }),
-/* 564 */
+/* 562 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(undefined);
