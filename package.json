@@ -10,17 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^2.13.6",
-    "express": "^4.16.2",
     "fetch": "^1.1.0",
     "moment": "^2.19.1",
-    "mongodb": "^2.2.31",
-    "mongoose": "^4.12.1",
-    "qrcode-terminal": "^0.11.0",
     "react-dom": "^16.0.0",
     "soundcloud-audio": "^1.2.1",
     "video-react": "^0.8.8",
-    "video.js": "^6.2.8",
-    "wechat4u": "^0.5.0"
+    "video.js": "^6.2.8"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

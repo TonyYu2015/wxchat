@@ -167,4 +167,8 @@ class App extends React.Component {
 	}
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App data={123}/>, document.getElementById('root'));
+
+App.propTypes = {
+	data: React.PropTypes.string.isRequired
+}

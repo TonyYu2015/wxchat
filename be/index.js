@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const moment = require('moment');
 const express = require('express');
 const path = require('path');
+const qiniu = require('qiniu');
 
 const app = express();
 
@@ -25,6 +26,7 @@ const db = mongoose.createConnection('mongodb://localhost:27017', (err, db) => {
 		app.listen(3000);
 	} else {
 		console.log('数据库连接失败！！！');
+		return null;
 	}
 });
 
@@ -129,6 +131,7 @@ if(bot.PROP.uin){
 	bot.start();
 }
 
+// 监听错误
 bot.on('error', err => {
 	console.log(err);
 });
@@ -258,6 +261,7 @@ bot.on('message', msg => {
 	res.render('');
 })*/
 
+// 根据日期返回前端微信记录
 router.get('/data', (req, res, next) => {
 	db.model('Person', MessageSchema, req.query.date).find({},(err, result) => {
 		// console.log(result)
